@@ -7,6 +7,39 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>este es un h1</h1>
+    <canvas id="mycanvas" width="500" height="500" style="border: 1px solid black;"></canvas>
+    <script>
+        var cv = null;
+        var ctx = null;
+        var press = false;
+        var super_x = 250, super_y = 250;
+
+        function run()
+        {
+            cv = document.getElementById('mycanvas');
+            ctx = cv.getContext('2d');
+
+            paint();
+        }
+
+        function paint()
+        {
+            ctx.fillStyle = "pink";
+            ctx.fillRect(0, 0, 500, 500);
+
+            ctx.fillStyle = "red";
+            ctx.fillRect(super_x, super_y, 40, 40);
+            ctx.strokeRect(super_x, super_y, 40, 40);
+        }
+
+        window.requestAnimationFrame = (function () {
+        }());
+
+        window.addEventListener('load', run, false);
+
+        function random_rgba() {
+
+        }
+    </script>
 </body>
 </html>
